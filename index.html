@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shubhi ✨</title>
+    <!-- Optimize Resource Loading & Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" as="style">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
+    
+    <!-- Font Awesome for Icons (Deferred Load) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ===== WELCOME OVERLAY FOR AUTOPLAY ===== -->
+    <div id="welcome-overlay" class="welcome-screen">
+        <div class="welcome-content">
+            <h2>A Special Gift For You</h2>
+            <button id="start-btn" class="btn pulse-btn">Tap to Open ✨</button>
+        </div>
+    </div>
+    <!-- ======================================== -->
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="images/Maanu Jhol Acoustic Annural Khalid Abdullah Siddiqui Asfand.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Audio Control -->
+    <button id="audio-control" class="floating-btn audio-btn hidden" aria-label="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Main Content (hidden until countdown ends) -->
+    <div id="main-content">
+
+    <!-- Floating Hearts Container -->
+    <div class="hearts-container" aria-hidden="true">
+        <div class="heart h-1">❤️</div>
+        <div class="heart h-2">💖</div>
+        <div class="heart h-3">💜</div>
+        <div class="heart h-4">💙</div>
+        <div class="heart h-5">💛</div>
+        <div class="heart h-6">💚</div>
+        <div class="heart h-7">💕</div>
+        <div class="heart h-8">💗</div>
+        <div class="heart h-9">💝</div>
+        <div class="heart h-10">💞</div>
+    </div>
+
+    <!-- Floating Aesthetic Flowers -->
+    <img src="images/daisy.png" alt="Daisy Decoration" class="floating-daisy daisy-1">
+    <img src="images/daisy.png" alt="Daisy Decoration" class="floating-daisy daisy-2">
+    <img src="images/daisy.png" alt="Daisy Decoration" class="floating-daisy daisy-3">
+    <img src="images/daisy.png" alt="Daisy Decoration" class="floating-daisy daisy-4">
+
+    <!-- Magical Glowing Dust Particles -->
+    <div class="dust-container">
+        <div class="dust d-1"></div>
+        <div class="dust d-2"></div>
+        <div class="dust d-3"></div>
+        <div class="dust d-4"></div>
+        <div class="dust d-5"></div>
+    </div>
+
+    <header class="hero" id="home">
+        <div class="glass-panel fade-in">
+            <h1 class="bounce glow-text">Happy Birthday</h1>
+            <h2 class="name text-reveal">Shubhi</h2>
+            <p class="date">✦ April 9th ✦</p>
+            <p class="message" id="typewriter-text"></p>
+            <a href="#special-gift" class="btn">Open Your Gift ✦</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery" class="gallery-section reveal">
+            <h2 class="section-title">Precious Memories</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gallery-item">
+                        <img src="images/shubhi_1.png" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=600&auto=format&fit=crop';">
+                    </div>
+                    <p class="photo-quote">"Your smile brightens up my everyday."</p>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-item">
+                        <img src="images/shubhi_2.png" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop';">
+                    </div>
+                    <p class="photo-quote">"In your light, I learn how to love."</p>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-item">
+                        <img src="images/shubhi_9.jpg" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop';">
+                    </div>
+                    <p class="photo-quote">"Every moment with you is a beautiful memory."</p>
+                </div>
+                <div class="gallery-card">
+                    <div class="gallery-item">
+                        <img src="images/rose.jpg" alt="A Beautiful Rose" onerror="this.src='https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=600&auto=format&fit=crop';">
+                    </div>
+                    <p class="photo-quote">"Ek gulab uske liye, jo meri dastaan ka sabse khubsoorat hissa hai. 🌹"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== THINGS I ADORE SECTION ===== -->
+        <section id="adore" class="adore-section reveal">
+            <h2 class="section-title">Things I Adore About You</h2>
+            <div class="adore-carousel-wrapper">
+                <div class="carousel-viewport">
+                    <div class="adore-carousel" id="adore-carousel">
+                        <div class="adore-card"><div class="card-emoji">💫</div><span>Your Smile</span><p>Jo andheron mein bhi roshni bhar deti hai</p></div>
+                        <div class="adore-card"><div class="card-emoji">🌙</div><span>Your Innocence</span><p>Itni saaf, itni sacchi — bilkul farishton jaisi</p></div>
+                        <div class="adore-card"><div class="card-emoji">🌸</div><span>Your Kindness</span><p>Sabke liye dil mein jagah rakhna — ye sirf tum ho</p></div>
+                        <div class="adore-card"><div class="card-emoji">💭</div><span>Your Thoughts</span><p>Tum sochti ho, aur sochne par majboor karti ho</p></div>
+                        <div class="adore-card"><div class="card-emoji">☁️</div><span>Your Softness</span><p>Baatein teri, andaaz tera — sab kuch naram hai</p></div>
+                        <div class="adore-card"><div class="card-emoji">🎵</div><span>Your Voice</span><p>Jab bolti ho, sab kuch thehr jaata hai</p></div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" id="prev-btn" aria-label="Previous">&#8592;</button>
+                <button class="carousel-btn next-carousel-btn" id="next-carousel-btn" aria-label="Next">&#8594;</button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- ===== MAKE A WISH CAKE ===== -->
+        <section id="wish-cake" class="cake-section reveal">
+            <h2 class="section-title">Make a Wish! 🎂</h2>
+            <p class="game-subtitle">Aankhein band karo, wish maango, aur cake par tap karo ✨</p>
+            <div class="cake-container">
+                <div class="aesthetic-cake-wrapper" id="magical-cake">
+                    <img src="images/cake_3d.png" alt="Aesthetic 3D Birthday Cake" class="cake-3d-image" id="interactive-cake">
+                </div>
+                <p id="wish-message" class="wish-text hidden">Wish maan li jayegi! 🌠 Happy Birthday Shubhi! ❤️</p>
+            </div>
+        </section>
+
+        <!-- ===== SCRATCH CARD ===== -->
+        <section id="scratch" class="scratch-section reveal">
+            <h2 class="section-title">Your Secret Message 🎁</h2>
+            <p class="game-subtitle">Scratch karo aur secret gift reveal karo! 💌</p>
+            <div class="scratch-wrapper">
+                <canvas id="scratch-canvas" width="340" height="190"></canvas>
+                <div class="scratch-message" id="scratch-msg">
+                    <span style="display:block; font-size: 0.95rem; line-height: 1.5; text-align: center;">🌸 <i>"Park ki uss mulaqat se laikar aaj tak, tum mere har din ka sabse pyaara hissa ban gayi. Tum sirf khaas nahi... mera sabse keemti sukoon ho."</i></span>
+                    <span class="script-font" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--accent); margin-top: 5px; display: block;">— Hamesha Tumhara ❤️</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="cute-game" class="game-section reveal">
+            <h2 class="section-title">A Little Game For You</h2>
+            <p class="game-subtitle">Match the pairs to reveal a special surprise! 🌸</p>
+            <div class="memory-game">
+                <!-- Cards will be generated by JS -->
+            </div>
+            <p id="game-message" class="game-message hidden">Yay! You got them all! 🎉 I love you! ❤️</p>
+            <div id="game-actions" class="hidden" style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <button id="restart-btn" class="btn">Play Again ↻</button>
+                <button id="next-btn" class="btn">Move Next ✦</button>
+            </div>
+        </section>
+
+        <section id="special-gift" class="gift-section" style="display: none; opacity: 0; transition: opacity 2s ease;">
+            <div class="gift-container">
+                <h2 class="section-title">A Message From The Heart</h2>
+                <div class="letter-card">
+                    <div class="letter-content">
+                        <i class="fas fa-envelope-open-heart envelope-icon"></i>
+                        <h3>Dear Shubhi,</h3>
+                        <p class="love-letter">
+                            You are the most beautiful part of every day. Your smile has the power to light up the darkest rooms, and your heart is as pure as magic. ✨<br><br>
+                            I hope this special 23rd birthday brings you as much absolute happiness as you bring to everyone around you. Keep shining, keep smiling, and never stop being the wonderful, aesthetic, and gorgeous person you are! 💖
+                        </p>
+                        
+                        <hr style="border: 0; height: 1px; background: rgba(255, 154, 158, 0.3); margin: 30px 0;">
+                        
+                        <div class="important-note" style="background: rgba(255, 240, 245, 0.6); padding: 28px; border-radius: 18px; border-left: 4px solid var(--accent); margin-bottom: 25px;">
+                            <h4 style="font-family: 'Playfair Display', serif; color: var(--accent); margin-bottom: 18px; font-size: 1.4rem;"><i class="fas fa-heart"></i> An Important Note...</h4>
+                            <p class="love-letter" style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.95;">
+                                <em style="color: #a07080; display: block; margin-bottom: 18px; font-style: italic; font-size: 1.05rem;">"Apni feelings kaise express karun tumhare saamne, mujhe kuch samajh nahi aa raha hai... par koshish kar raha hoon, shayad tum samajh pao.<br><br>Jo main aaj keh raha hoon, wo dil mein kaafi waqt se tha. Sochta raha ki bolun ya nahi... par jo cheez dil se nikle, usse andar daba kar rakhna itna asaan bhi nahi hota. Toh aaj bas bol deta hoon — sirf isliye ki dil halka ho jaye."</em>
+
+                                Tum sach mein mere liye bohot important ho, aur hamesha rahogi. Mujhe aaj bhi wo pehla din yaad hai jab hum mile the... tumne badi masoomiyat se poocha tha, <i>"Park kiske saath aate ho?"</i> aur jab maine kaha <i>"Akele"</i>... toh tumne ek chhoti si muskaan ke saath kaha tha, <i>"Ab se main aaya karungi aapke saath."</i><br><br>
+
+                                Shayad tumhe yaad bhi nahi hoga, par un chhote chhote lamhon ne mujhe ek ajeeb sa sukoon diya tha. Pata nahi kab tum mere din ka sabse pyaara hissa ban gayi.<br><br>
+
+                                Mujhe zyada kuch nahi chahiye — bas tumhara saath chahiye. Yeh tumse koi umeed nahi hai, koi demand nahi hai. Bas ye baat tum tak pohunchani thi, toh pohonch gayi. 🌸<br><br>
+
+                                Agar mere in shabdon ne tumhare dil ko zara sa bhi chua ho, toh milne aa jaana. Main theek usi jagah tumhara intezaar karunga jahan humne pehli baar dil se baat ki thi...<br><br>
+                                <strong style="color: #d1495b;">10 April &nbsp;✦&nbsp; Same Time &nbsp;✦&nbsp; Same Place ❤️</strong><br>
+                                <span style="font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #b07080;">Main wahi honga, tumhara intezaar karta hua.</span>
+                            </p>
+                            
+                            <!-- Interactive Response Buttons -->
+                            <div class="interactive-response" style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
+                                <button id="accept-btn" class="btn response-btn accept">I will be there 🌸</button>
+                                <button id="reject-btn" class="btn response-btn reject">I can't come</button>
+                            </div>
+                        </div>
+                        
+                        <div class="letter-signature">
+                            <p>With all my love,</p>
+                            <span class="script-font signature-name">Always</span>
+                        </div>
+                    </div>
+                    <div class="image-wrapper polaroid-presentation">
+                        <div class="frame-wrap">
+                            <img src="images/shubhi_main.png" alt="Shubhi Special Pic" id="downloadable-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513279922550-250c2129b13a?q=80&w=800&auto=format&fit=crop';">
+                        </div>
+                        <a href="images/shubhi_main.png" download="Happy_Birthday_Shubhi.png" class="btn primary-btn pulse download-float">
+                            <i class="fas fa-download"></i> Save This Memory
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with <span class="footer-heart">❤️</span> just for you, Shubhi.</p>
+    </footer>
+
+    </div><!-- end #main-content -->
+
+    <!-- Confetti Library (Deferred) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script defer src="js/script.js"></script>
+</body>
+</html>
