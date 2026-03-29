@@ -153,8 +153,8 @@
             <div class="scratch-wrapper">
                 <canvas id="scratch-canvas" width="340" height="190"></canvas>
                 <div class="scratch-message" id="scratch-msg">
-                    <span style="display:block; font-size: 0.95rem; line-height: 1.5; text-align: center;">🌸 <i>"Park ki uss mulaqat se laikar aaj tak, tum mere har din ka sabse pyaara hissa ban gayi. Tum sirf khaas nahi... mera sabse keemti sukoon ho."</i></span>
-                    <span class="script-font" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: var(--accent); margin-top: 5px; display: block;">— Hamesha Tumhara ❤️</span>
+                    <span style="display:block; font-size: 0.82rem; line-height: 1.35; text-align: center; padding: 0 5px;">🌸 <i>"Park ki uss mulaqat se laikar aaj tak, tum mere har din ka sabse pyaara hissa ban gayi. Tum sirf khaas nahi... mera sabse keemti sukoon ho."</i></span>
+                    <span class="script-font" style="font-family: 'Dancing Script', cursive; font-size: 1.25rem; color: var(--accent); margin-top: 2px; display: block;">— Hamesha Tumhara ❤️</span>
                 </div>
             </div>
         </section>
@@ -179,6 +179,20 @@
                     <div class="letter-content">
                         <i class="fas fa-envelope-open-heart envelope-icon"></i>
                         <h3>Dear Shubhi,</h3>
+                        
+                        <!-- Voice Note Player -->
+                        <div class="voice-note-wrapper">
+                            <div class="voice-note-info">
+                                <i class="fas fa-microphone-lines waveform-icon"></i>
+                                <span>A Little Voice Note For You 🎙️</span>
+                            </div>
+                            <audio id="voice-note" controls class="custom-audio">
+                                <source src="images/voice.m4a" type="audio/mp4">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <small class="voice-info-text">*(Play me before reading further)*</small>
+                        </div>
+
                         <p class="love-letter">
                             You are the most beautiful part of every day. Your smile has the power to light up the darkest rooms, and your heart is as pure as magic. ✨<br><br>
                             I hope this special 23rd birthday brings you as much absolute happiness as you bring to everyone around you. Keep shining, keep smiling, and never stop being the wonderful, aesthetic, and gorgeous person you are! 💖
@@ -191,15 +205,19 @@
                             <p class="love-letter" style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.95;">
                                 <em style="color: #a07080; display: block; margin-bottom: 18px; font-style: italic; font-size: 1.05rem;">"Apni feelings kaise express karun tumhare saamne, mujhe kuch samajh nahi aa raha hai... par koshish kar raha hoon, shayad tum samajh pao.<br><br>Jo main aaj keh raha hoon, wo dil mein kaafi waqt se tha. Sochta raha ki bolun ya nahi... par jo cheez dil se nikle, usse andar daba kar rakhna itna asaan bhi nahi hota. Toh aaj bas bol deta hoon — sirf isliye ki dil halka ho jaye."</em>
 
+                                Main chahta toh yeh sab tumhe call pe bhi bata sakta tha, par jaanta hoon main baat karte karte shayad bohot emotional ho jata... aur main bilkul nahi chahta tha ki meri wajah se tumhe apne upar zara sa bhi pressure feel ho. Isliye aaj sab likh kar bata raha hoon. ❤️<br><br>
+
                                 Tum sach mein mere liye bohot important ho, aur hamesha rahogi. Mujhe aaj bhi wo pehla din yaad hai jab hum mile the... tumne badi masoomiyat se poocha tha, <i>"Park kiske saath aate ho?"</i> aur jab maine kaha <i>"Akele"</i>... toh tumne ek chhoti si muskaan ke saath kaha tha, <i>"Ab se main aaya karungi aapke saath."</i><br><br>
 
                                 Shayad tumhe yaad bhi nahi hoga, par un chhote chhote lamhon ne mujhe ek ajeeb sa sukoon diya tha. Pata nahi kab tum mere din ka sabse pyaara hissa ban gayi.<br><br>
 
+                                Tum aksar poochti ho na, ki <span style="color: var(--accent); font-weight: 600;">"Tumhe main hi kyun pasand hoon?"</span> Toh sach bataun? Mere paas iska koi ek seedha sa jawab nahi hai... kyunki tumhari kisi ek baat pe dil nahi aaya mera. Tumhari bholi si wo hassi jismein saari duniya ki khushi chhupi lagti hai, tumhara sabki itni fikr karna, aur tumhari wo masoomiyat jo bina kuch kahe hi sab kuch keh jaati hai. Maine tumhe nahi chuna, balki mere dil ne us sukoon ko chuna jo sirf aur sirf tumhare aas-paas milta hai. Tum 'tum' ho, aur bas isiliye tum meri sabse pyari khwaish ban gayi ho. ✨<br><br>
+
                                 Mujhe zyada kuch nahi chahiye — bas tumhara saath chahiye. Yeh tumse koi umeed nahi hai, koi demand nahi hai. Bas ye baat tum tak pohunchani thi, toh pohonch gayi. 🌸<br><br>
 
-                                Agar mere in shabdon ne tumhare dil ko zara sa bhi chua ho, toh milne aa jaana. Main theek usi jagah tumhara intezaar karunga jahan humne pehli baar dil se baat ki thi...<br><br>
+                                Agar tumhe lage ki mere in lafzon mein thodi si bhi sachai hai, aur tumhara dil khud aane ka kare, toh aa jaana. Main theek usi jagah par milunga jahan sabse pehli baar humari woh ek bohot pyaari si baat hui thi...<br><br>
                                 <strong style="color: #d1495b;">10 April &nbsp;✦&nbsp; Same Time &nbsp;✦&nbsp; Same Place ❤️</strong><br>
-                                <span style="font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #b07080;">Main wahi honga, tumhara intezaar karta hua.</span>
+                                <span style="font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #b07080;">Mujhe tumhara intezaar rahega... hamesha ki tarah.</span>
                             </p>
                             
                             <!-- Interactive Response Buttons -->

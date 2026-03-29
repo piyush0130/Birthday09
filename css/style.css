@@ -873,8 +873,9 @@ h2.section-title, h3 {
 ======================== */
 .aesthetic-cake-wrapper {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1030,14 +1031,17 @@ h2.section-title, h3 {
 .scratch-wrapper {
     position: relative;
     display: inline-block;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 340 / 190;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(255,154,158,0.2);
 }
 
 .scratch-message {
-    width: 340px;
-    height: 190px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -1053,6 +1057,8 @@ h2.section-title, h3 {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     cursor: url('https://cdn-icons-png.flaticon.com/32/1828/1828884.png'), crosshair;
     touch-action: none;
@@ -1369,31 +1375,90 @@ footer {
         font-size: 1.6rem;
     }
 
-    /* Scale elements to fit narrow screens */
-    .cake-wrapper {
-        transform: scale(0.95);
-        transform-origin: center bottom;
-        margin-bottom: 20px;
+    /* Adjust spacing on mobile */
+    .aesthetic-cake-wrapper {
+        margin-bottom: 15px;
     }
     
     .scratch-wrapper {
-        transform: scale(0.95);
-        transform-origin: center center;
+        transform: none;
     }
 }
 
 @media (max-width: 400px) {
-    .cake-wrapper {
-        transform: scale(0.85);
-        transform-origin: center bottom;
-    }
     
     .scratch-wrapper {
-        transform: scale(0.85);
-        transform-origin: center center;
+        transform: none;
     }
     
     .section-title {
         font-size: 1.8rem;
     }
+}
+
+/* ========================
+   VOICE NOTE PLAYER
+======================== */
+.voice-note-wrapper {
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed rgba(255, 154, 158, 0.5);
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin: 10px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.1);
+    transition: all 0.3s ease;
+}
+
+.voice-note-wrapper:hover {
+    box-shadow: 0 15px 25px rgba(255, 154, 158, 0.2);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.voice-note-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.voice-note-info span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.waveform-icon {
+    color: var(--accent);
+    font-size: 1.2rem;
+    animation: pulseGlow 2s infinite;
+    display: inline-block;
+}
+
+.custom-audio {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    outline: none;
+    border-radius: 20px;
+}
+
+.custom-audio::-webkit-media-controls-panel {
+    background-color: #fdf0f4;
+}
+
+.custom-audio::-webkit-media-controls-play-button,
+.custom-audio::-webkit-media-controls-mute-button {
+    background-color: #ffb6c1;
+    border-radius: 50%;
+}
+
+.voice-info-text {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 8px;
+    font-style: italic;
 }

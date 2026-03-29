@@ -412,6 +412,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize game
         renderGame();
     }
+
+    // 8. Voice Note Logic - Pause background music when voice note plays
+    const voiceNote = document.getElementById('voice-note');
+    if (voiceNote && bgMusic) {
+        voiceNote.addEventListener('play', () => {
+            if (!bgMusic.paused) {
+                bgMusic.pause();
+                if (audioControl) {
+                    audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+                    audioControl.style.background = 'var(--accent)';
+                    audioControl.style.color = 'white';
+                }
+            }
+        });
+    }
 });
 
 // Confetti Functions
