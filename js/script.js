@@ -413,19 +413,38 @@ document.addEventListener('DOMContentLoaded', () => {
         renderGame();
     }
 
-    // 8. Voice Note Logic - Pause background music when voice note plays
+     // 8. Voice Note Logic - Auto pause & resume background music
     const voiceNote = document.getElementById('voice-note');
     if (voiceNote && bgMusic) {
+        let wasBgmPlayingBeforeVoiceNote = false;
+        
         voiceNote.addEventListener('play', () => {
             if (!bgMusic.paused) {
+                wasBgmPlayingBeforeVoiceNote = true;
                 bgMusic.pause();
                 if (audioControl) {
                     audioControl.innerHTML = '<i class="fas fa-pause"></i>';
                     audioControl.style.background = 'var(--accent)';
                     audioControl.style.color = 'white';
                 }
+            } else {
+                wasBgmPlayingBeforeVoiceNote = false;
             }
         });
+
+        const resumeBgm = () => {
+            if (wasBgmPlayingBeforeVoiceNote && bgMusic.paused) {
+                bgMusic.play().catch(e => console.log('Auto-play prevented', e));
+                if (audioControl) {
+                    audioControl.innerHTML = '<i class="fas fa-music"></i>';
+                    audioControl.style.background = 'rgba(255,255,255,0.8)';
+                    audioControl.style.color = 'var(--accent)';
+                }
+            }
+        };
+
+        voiceNote.addEventListener('pause', resumeBgm);
+        voiceNote.addEventListener('ended', resumeBgm);
     }
 });
 
