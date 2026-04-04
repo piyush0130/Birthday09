@@ -23,11 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startBtn && welcomeOverlay) {
         startBtn.addEventListener('click', () => {
             // 1. Play audio
-            bgMusic.play().then(() => {
-                console.log("Music started successfully");
-            }).catch(error => {
-                console.log("Audio play failed on interaction", error);
-            });
+            bgMusic.play().catch(() => {});
             
             // 2. Hide overlay
             welcomeOverlay.classList.add('hidden');
@@ -413,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderGame();
     }
 
-     // 8. Voice Note Logic - Auto pause & resume background music
+    // 8. Voice Note Logic - Auto pause & resume background music
     const voiceNote = document.getElementById('voice-note');
     if (voiceNote && bgMusic) {
         let wasBgmPlayingBeforeVoiceNote = false;
