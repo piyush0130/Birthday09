@@ -22,7 +22,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2.8">
 </head>
 <body>
     <canvas id="confetti-canvas"></canvas>
@@ -45,6 +45,8 @@
     <button id="audio-control" class="floating-btn audio-btn hidden" aria-label="Toggle Music">
         <i class="fas fa-music"></i>
     </button>
+
+
 
     <!-- Main Content (hidden until countdown ends) -->
     <div id="main-content">
@@ -151,6 +153,25 @@
             </div>
         </section>
 
+        <!-- ===== PROTECTIVE CARE SECTION ===== -->
+        <section id="care-section" class="care-inline-section reveal">
+            <div class="care-content-inline">
+                <h3>Suno... 🌸</h3>
+                <p>Mujhe pata hai tumhare periods chal rahe hain, aur birthday ke din pain ya mood swings jhelna kitna annoying hota hai. Please apna bohot zyada khayal rakhna.</p>
+                <p>Aaram karna, jo cheez tumhe pain mein better feel karaye bas wahi karna, aur apni saari favourite cravings poori karna! Agar chidchidapan lage toh apna saara gussa mujh par nikal sakti ho. Tum jaisi bhi hai, gusse mein ya dard mein, main tumhara dhyan rakhne ke liye hamesha tumhara ban ke rahunga.</p>
+                <p><strong>A big virtual hug for my butterfly, my strongest girl! 🦋🤗❤️</strong></p>
+
+                <!-- VIRTUAL KITKAT -->
+                <div class="virtual-kitkat" id="kitkat">
+                    <img src="images/kitkat_closed.png" alt="Virtual KitKat" class="kitkat-img" id="kitkat-img" loading="lazy">
+                    <span class="unwrap-text">Tap to unwrap & bite! 👆</span>
+                </div>
+                <div id="kitkat-msg" class="hidden kitkat-msg">
+                    🍫 <i>Chalo abhi iss virtual wali se kaam chala lo, jaldi hi original wali launga tumhare liye!</i>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== SCRATCH CARD ===== -->
         <section id="scratch" class="scratch-section reveal">
             <h2 class="section-title">Your Secret Message 🎁</h2>
@@ -158,7 +179,7 @@
             <div class="scratch-wrapper">
                 <canvas id="scratch-canvas" width="340" height="190"></canvas>
                 <div class="scratch-message" id="scratch-msg">
-                    <span style="display:block; font-size: 0.82rem; line-height: 1.35; text-align: center; padding: 0 5px;">🌸 <i>"Park ki uss mulaqat se laikar aaj tak, tum mere har din ka sabse pyaara hissa ban gayi. Tum sirf khaas nahi... mera sabse keemti sukoon ho."</i></span>
+                    <span style="display:block; font-size: 0.82rem; line-height: 1.35; text-align: center; padding: 0 5px;">🌸 <i>"Park ki uss mulaqat se lekar aaj tak, tum mere har din ka sabse pyaara hissa ban gayi. Tum sirf khaas nahi... mera sabse keemti sukoon ho."</i></span>
                     <span class="script-font" style="font-family: 'Dancing Script', cursive; font-size: 1.25rem; color: var(--accent); margin-top: 2px; display: block;">— Hamesha Tumhara ❤️</span>
                 </div>
             </div>
@@ -214,25 +235,25 @@
 
                                 Tum sach mein mere liye bohot important ho, aur hamesha rahogi. Mujhe aaj bhi wo pehla din yaad hai jab hum mile the... tumne badi masoomiyat se poocha tha, <i>"Park kiske saath aate ho?"</i> aur jab maine kaha <i>"Akele"</i>... toh tumne ek chhoti si muskaan ke saath kaha tha, <i>"Ab se main aaya karungi aapke saath."</i><br><br>
 
-                                Shayad tumhe yaad bhi nahi hoga, par un chhote chhote lamhon ne mujhe ek ajeeb sa sukoon diya tha. Pata nahi kab tum mere din ka sabse pyaara hissa ban gayi. Bhagwan ji ne milya he to kuch socha hi hoga, nhi milna hota to sayad esa coincidence hi nhi hota ki hamri baat hoti.<br><br>
+                                Shayad tumhe yaad bhi nahi hoga, par un chhote chhote lamhon ne mujhe ek ajeeb sa sukoon diya tha. Pata nahi kab tum mere din ka sabse pyaara hissa ban gayi. Bhagwan ji ne milaya hai toh kuch socha hi hoga, nahi milna hota toh shayad aisa coincidence hi nahi hota ki humari baat hoti.<br><br>
 
-                                Tum aksar poochti ho na, ki <span style="color: var(--accent); font-weight: 600;">"Tumhe main hi kyun pasand hoon?"</span> Toh sach bataun? Mere paas iska koi ek seedha sa jawab nahi hai... kyunki tumhari kisi ek baat pe dil nahi aaya mera. Tumhari bholi si wo hassi jismein saari duniya ki khushi chhupi lagti hai, tumhara sabki itni fikr karna, aur tumhari wo masoomiyat jo bina kuch kahe hi sab kuch keh jaati hai. Maine tumhe nahi chuna, balki mere dil ne us sukoon ko chuna jo sirf aur sirf tumhare aas-paas milta hai. Tum 'tum' ho, aur bas isiliye tum meri sabse pyari khwaish ban gayi ho. ✨<br><br>
+                                Tum aksar poochti ho na, ki <span style="color: var(--accent); font-weight: 600;">"Tumhe main hi kyun pasand hoon?"</span> Toh sach bataun? Mere paas iska koi ek seedha sa jawab nahi hai... kyunki tumhari kisi ek baat pe dil nahi aaya mera. Tumhari bholi si wo hassi jismein saari duniya ki khushi chhupi lagti hai, tumhara sabki itni fikr karna, aur tumhari wo masoomiyat jo bina kuch kahe hi sab kuch keh jaati hai. Maine tumhe nahi chuna, balki mere dil ne us sukoon ko chuna jo sirf aur sirf tumhare aas-paas milta hai. Tum 'tum' ho, aur bas isiliye tum meri sabse pyaari khwaish ban gayi ho. ✨<br><br>
 
                                 Suno, guzre waqt ne mujhse bahut kuch chheena hai, aur aane wale waqt mein bhi shayad bahut kuch khone wala hoon... par sach kahun, main tumhe nahi khona chahta. Main nahi chahta ki tum aur main juda ho jayein, ya ek dusre ke samne ajnabi ban jayein. Humare beech koi aisi doori aaye jise hum chah kar bhi khatm na kar payein, aur tumhe meri wajah se koi bhi dukh mile... aisa main kabhi nahi hone dena chahta. Main duniya ka sab kuch khone ko taiyaar hoon, magar tumhe nahi...<br><br>
 
-                                Khair... shayad yeh mere fizool khayal hain, kyu ki mujhe lagne laga hai ki tumne mann bana liya hai mujhse door jaane ka. Par sach yahi hai ki mera yeh dil sach mein nahi chahta ki tumhe meri zindagi se door jana pade.<br><br>
+                                Khair... shayad yeh mere fizool khayal hain, kyunki mujhe lagne laga hai ki tumne mann bana liya hai mujhse door jaane ka. Par sach yahi hai ki mera yeh dil sach mein nahi chahta ki tumhe meri zindagi se door jaana pade.<br><br>
 
-                                Yeh sab keh kar main tum par koi umeed ya demand nahi thop raha. Main bas yeh isliye bata raha hoon taaki mujhe kabhi is baat ka regret na rahe ki maine tumhe apne dil ki baat hi nahi batayi. Meri feelings tum tak pohunchani thi, toh pohonch gayi... aage sach mein jo bhi tumhari marzi hogi, main uski poori izzat karunga. Par agar mere dil ki suno toh... main bas yahi chahta hoon ki tum hamesha mere saath raho. 🌸<br><br>
+                                Yeh sab keh kar main tum par koi umeed ya demand nahi thop raha. Main bas yeh isliye bata raha hoon taaki mujhe kabhi is baat ka regret na rahe ki maine tumhe apne dil ki baat hi nahi batayi. Meri feelings tum tak pahunchani thi, toh pahunch gayi... aage sach mein jo bhi tumhari marzi hogi, main uski poori izzat karunga. Par agar mere dil ki suno toh... main bas yahi chahta hoon ki tum hamesha mere saath raho. 🌸<br><br>
 
-                                Agar tumhe lage ki mere in lafzon mein thodi si bhi sachai hai, aur tumhara dil khud aane ka kare, toh aa jaana. Main theek usi jagah par milunga jahan sabse pehli baar humari woh ek bohot pyaari si baat hui thi...<br><br>
-                                <strong style="color: #d1495b;">10 April &nbsp;✦&nbsp; Same Time &nbsp;✦&nbsp; Same Place ❤️</strong><br>
-                                <span style="font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #b07080;">Mujhe tumhara intezaar rahega... hamesha ki tarah.</span>
+                                Suno, main jaanta hoon ki abhi aana tabiyat ki wajah se mushkil hai, aur main bilkul nahi chahta ki tum dard mein aao. Tum pehle apna achhe se dhyan rakho, aaram karo aur theek ho jao. Jab tum bilkul theek aur comfortable feel karo, tab hum milenge. Par... milna zaroori hai! 😊 Main theek usi jagah par milunga jahan sabse pehli baar humari woh ek bohot pyaari si baat hui thi...<br><br>
+                                <strong style="color: #d1495b;">Jab Tum Theek Ho Jao &nbsp;✦&nbsp; Same Place ❤️</strong><br>
+                                <span style="font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: #b07080;">Mujhe us din ka intezaar rahega... jaldi aana.</span>
                             </p>
                             
                             <!-- Interactive Response Buttons -->
                             <div class="interactive-response" style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
-                                <button id="accept-btn" class="btn response-btn accept">I will be there 🌸</button>
-                                <button id="reject-btn" class="btn response-btn reject">I can't come</button>
+                                <button id="accept-btn" class="btn response-btn accept">I'll meet you soon 🌸</button>
+                                <button id="reject-btn" class="btn response-btn reject">Maybe later</button>
                             </div>
                         </div>
                         
