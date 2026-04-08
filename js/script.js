@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(fireConfetti, 300);
             setTimeout(typeWriter, 800);
 
-            // 5. Show floating audio control button
+            // 5. Show floating buttons
             const audioControl = document.getElementById('audio-control');
             if (audioControl) audioControl.classList.remove('hidden');
+
         });
     }
 
@@ -59,7 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
+    // Virtual KitKat Logic
+    const kitkatBtn = document.getElementById('kitkat');
+    const kitkatMsg = document.getElementById('kitkat-msg');
+    const kitkatImg = document.getElementById('kitkat-img');
+    if (kitkatBtn && kitkatMsg) {
+        kitkatBtn.addEventListener('click', () => {
+            if (kitkatImg) {
+                kitkatImg.src = 'images/kitkat_bar.png';
+            }
+            kitkatBtn.classList.add('kitkat-unwrapped');
+            const unwrapText = kitkatBtn.querySelector('.unwrap-text');
+            if (unwrapText) unwrapText.textContent = 'Yumm! 🍫';
+            kitkatMsg.classList.remove('hidden');
+        }, { once: true });
+    }
     // Since we handle revealing via the start button now, we don't automatically trigger them on load
     // The previous SITE INIT block logic is moved inside the click handler above.
 
@@ -103,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (acceptBtn) {
         acceptBtn.addEventListener('click', () => {
-            acceptBtn.textContent = '❤️ Mujhe pata tha! See you there!';
+            acceptBtn.textContent = '❤️ Take your time, main yahi hoon!';
             acceptBtn.style.background = 'linear-gradient(120deg, #ff6b8a, #ffa0b4)';
             acceptBtn.style.color = 'white';
             if (rejectBtn) rejectBtn.style.display = 'none';

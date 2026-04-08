@@ -1462,3 +1462,109 @@ footer {
     margin-top: 8px;
     font-style: italic;
 }
+
+/* ========================
+   CARE INLINE SECTION
+======================== */
+.care-inline-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+.care-content-inline {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 240, 245, 0.9));
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(255, 154, 158, 0.2);
+    border: 2px solid var(--primary);
+}
+
+.care-content-inline h3 {
+    font-size: 2.4rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.care-content-inline p {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.care-content-inline strong {
+    color: #c97b8a;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.15rem;
+}
+
+/* Care section responsiveness */
+@media (max-width: 600px) {
+    .care-inline-section {
+        padding: 40px 15px;
+    }
+    .care-content-inline {
+        padding: 25px 20px;
+    }
+}
+
+/* ========================
+   VIRTUAL KITKAT
+======================== */
+.virtual-kitkat {
+    margin: 25px auto 10px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.virtual-kitkat:hover {
+    transform: translateY(-5px) scale(1.05) rotate(2deg);
+}
+.kitkat-img {
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(227, 24, 55, 0.2);
+    transition: all 0.4s ease;
+    mix-blend-mode: multiply;
+}
+.unwrap-text {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-top: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+.kitkat-unwrapped .kitkat-img {
+    animation: eatChocolate 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.kitkat-unwrapped .unwrap-text {
+    color: #a87e65;
+}
+.kitkat-msg {
+    margin-top: 15px;
+    font-size: 1.05rem;
+    color: #d1495b;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    animation: gentleRise 0.5s forwards;
+}
+
+@keyframes eatChocolate {
+    0% { transform: scale(1) rotate(2deg); }
+    30% { transform: scale(0.9) translateY(10px) rotate(-5deg); filter: brightness(0.8); }
+    100% { transform: scale(1.15) rotate(0deg); opacity: 0.9; }
+}
