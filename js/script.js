@@ -1,3 +1,8 @@
+// Polyfill for NodeList.forEach to support ancient mobile browsers
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Typewriter Effect
     const textElement = document.getElementById('typewriter-text');
@@ -23,7 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startBtn && welcomeOverlay) {
         startBtn.addEventListener('click', () => {
             // 1. Play audio
-            bgMusic.play().catch(() => {});
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+            }
             
             // 2. Hide overlay
             welcomeOverlay.classList.add('hidden');
@@ -96,11 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    } else {
+        // Fallback for older browsers
+        revealElements.forEach(el => el.classList.add('active'));
+    }
 
     // Helper to show the hidden gift section from any trigger
     const giftSection = document.getElementById('special-gift');
@@ -415,7 +427,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 showGiftSection();
 
                 setTimeout(() => {
-                    giftSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (giftSection) {
+                        giftSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }, 100);
             });
         }
@@ -445,7 +459,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const resumeBgm = () => {
             if (wasBgmPlayingBeforeVoiceNote && bgMusic.paused) {
-                bgMusic.play().catch(e => console.log('Auto-play prevented', e));
+                const playP = bgMusic.play();
+                if (playP !== undefined) playP.catch(e => console.log('Auto-play prevented', e));
                 if (audioControl) {
                     audioControl.innerHTML = '<i class="fas fa-music"></i>';
                     audioControl.style.background = 'rgba(255,255,255,0.8)';

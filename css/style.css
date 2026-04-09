@@ -345,7 +345,6 @@ h2.section-title, h3 {
 .countdown-grid {
     display: flex;
     justify-content: center;
-    gap: 14px;
     flex-wrap: wrap;
 }
 
@@ -451,6 +450,7 @@ h2.section-title, h3 {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 50px;
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
@@ -677,12 +677,12 @@ h2.section-title, h3 {
     perspective: 1000px;
     max-width: 100%;
     justify-content: center;
-    gap: 15px;
 }
 
 .memory-card {
     width: calc(25% - 15px);
     height: 120px;
+    margin: 7.5px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -835,7 +835,6 @@ h2.section-title, h3 {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
     margin-top: 22px;
 }
 .carousel-dots .dot {
@@ -845,6 +844,7 @@ h2.section-title, h3 {
     background: var(--primary);
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
+    margin: 0 4px;
 }
 .carousel-dots .dot.active {
     background: var(--accent);
@@ -875,7 +875,7 @@ h2.section-title, h3 {
     position: relative;
     width: 100%;
     max-width: 350px;
-    aspect-ratio: 1 / 1;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1033,7 +1033,7 @@ h2.section-title, h3 {
     display: inline-block;
     width: 100%;
     max-width: 340px;
-    aspect-ratio: 340 / 190;
+    height: 190px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(255,154,158,0.2);
@@ -1131,6 +1131,7 @@ h2.section-title, h3 {
     .memory-card {
         width: calc(33.333% - 15px);
         height: 110px;
+        margin: 7.5px;
     }
     .front-face, .back-face {
         font-size: 2.5rem;
@@ -1141,12 +1142,10 @@ h2.section-title, h3 {
     .memory-card {
         width: calc(33.333% - 10px);
         height: 90px;
+        margin: 5px;
     }
     .front-face, .back-face {
         font-size: 2rem;
-    }
-    .memory-game {
-        gap: 10px;
     }
 }
 
@@ -1295,13 +1294,24 @@ footer {
         font-size: 1.7rem;
     }
 
-    /* Daisies - smaller & repositioned */
+    /* Daisies - smaller & repositioned & performance optimized */
+    .floating-daisy {
+        filter: none !important;
+        mix-blend-mode: normal !important;
+    }
     .daisy-1 { width: 70px; left: -2%; top: 2%; }
     .daisy-2 { width: 90px; right: -4%; top: 22%; }
     .daisy-3 { width: 65px; left: -4%; top: 65%; }
     .daisy-4 { width: 80px; right: -2%; bottom: 2%; }
 
-    /* Daisies - smaller & repositioned */
+    /* Glass Panel performance optimized for older mobile CPUs */
+    .glass-panel {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 2.5rem 1.4rem;
+        width: 94%;
+        border-radius: 28px;
+    }
     .letter-content {
         padding: 40px 22px;
         background: url('https://www.transparenttextures.com/patterns/cream-paper.png'), linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,250,252,0.9));
